@@ -16,7 +16,7 @@ int main(){
     maior = num;
     menor = num;
 
-    while(num > 0){
+    while(num >= 0){
         if (num > maior){
             maior = num;
         }
