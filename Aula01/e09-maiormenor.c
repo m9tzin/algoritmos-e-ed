@@ -8,13 +8,28 @@ o negativo). */
 #include <stdio.h>
 
 int main(){
-    int number;
+    int num, menor, maior;
+
+    printf("Insira um numero inteiro: (Numero negativo = encerra o programa.)\n");
+    scanf("%d", &num);
     
-    while(number > 0){
-        printf("Insira um numero:");
-        scanf("%d", &number);
-        printf("%d\n", number);
+    maior = num;
+    menor = num;
+
+    while(num > 0){
+        if (num > maior){
+            maior = num;
+        }
+        if (num < menor){
+            menor = num;
+        }
+        printf("Insira um numero inteiro: (Numero negativo = encerra o programa.)\n");
+        scanf("%d", &num);
     }
-    printf("Numero negativo inserido, programa encerrado.");
-    return 0;
+        
+        printf("O maior numero foi [%d] e o menor foi [%d].\n", maior, menor);
+
+        printf("Programa encerrado.");
+
+     return 0;
  }
