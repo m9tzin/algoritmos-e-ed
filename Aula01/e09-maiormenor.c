@@ -8,6 +8,13 @@ o negativo). */
 #include <stdio.h>
 
 int main(){
-
+    int number;
+    
+    while(number > 0){
+        printf("Insira um numero:");
+        scanf("%d", &number);
+        printf("%d\n", number);
+    }
+    printf("Numero negativo inserido, programa encerrado.");
     return 0;
  }
