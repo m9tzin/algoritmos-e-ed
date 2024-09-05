@@ -2,6 +2,9 @@
 // 03/09/2024
 // Matheus Marinho
 
+/* Fazer um programa que mostre o código ASCII correspondente aos caracteres
+gamer WASD. */
+
 #include <stdio.h>
 
 int main(){
