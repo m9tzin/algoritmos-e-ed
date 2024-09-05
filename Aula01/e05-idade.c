@@ -2,6 +2,9 @@
 // 31/08/2024
 // Matheus Marinho
 
+/* Fazer um programa que ao entrar com sua idade diga se você é maior de idade ou
+não. */
+
 #include <stdio.h>
 
 int main(){

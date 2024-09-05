@@ -2,6 +2,9 @@
 // 30/08/2024
 // Matheus Marinho
 
+/* Leia o valor do raio de um círculo e calcule e imprima a área dele.
+ */
+
 #include <stdio.h> 
 #include <math.h>
 int main(){

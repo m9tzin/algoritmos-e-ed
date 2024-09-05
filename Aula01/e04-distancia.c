@@ -2,6 +2,9 @@
 // 31/08/2024
 // Matheus Marinho
 
+/* Escreva um programa que dadas duas coordenadas (x1, y1) e (x2, y2) de pontos
+em R2, calcule sua distância. */
+
 #include <stdio.h>
 #include <math.h>
 
