@@ -12,17 +12,17 @@ ano de passagem após o atual. */
 int proximoHalley (int anoAtual){
     int anoRef = 1986, ciclo = 76, proximoAno;
     
-    if(anoAtual >= anoRef){
-        proximoAno = anoRef;
-        while(proximoAno <= anoAtual){
-            proximoAno += ciclo;
+    if(anoAtual >= anoRef){                     /* 1900 >= 1986 */
+        proximoAno = anoRef;                    /* proximoAno = 1986 */
+        while(proximoAno <= anoAtual){          /* proximoAno <= 1900 */
+            proximoAno += ciclo;                /* proximoAno = 2062 [Halley] */
         }
-    }else{
-        proximoAno = anoRef;
-        while(proximoAno > anoAtual){
-            proximoAno -= ciclo;
+    }else{                                      /* 400 < 1986 */
+        proximoAno = anoRef;                    /* proximoAno = 1986 */
+        while(proximoAno > anoAtual){           /* proximoAno > 400 */
+            proximoAno -= ciclo;                /* proximoAno = 1910, ..., 390 */
         }
-        proximoAno += ciclo;
+        proximoAno += ciclo;                    /* proximoAno = 390+76 = 466 [Halley] */
     }
     return proximoAno;
 }
