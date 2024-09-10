@@ -18,7 +18,7 @@ Os valores correspondentes na base 4 para cada número digitado. */
 
 void convertNumbers(int limit) {
     int array[limit];
-    char base4Mapping[] = {'A', 'C', 'G', 'T'}; /* Mapeando o vetor de base4 */
+    char base4Mapping[] = {'A', 'C', 'G', 'T'}; /* Mapping do vetor de base4 */
 
     /* Armazenando os números */
     for (int i = 0; i < limit; i++) {
@@ -32,8 +32,9 @@ void convertNumbers(int limit) {
         int i = 0;
         int num = array[k];
 
+        /* Caso 0: */
         if (num == 0) {
-            printf("%d em base 4: A\n", array[k]);
+            printf("%d na base 4: A\n", array[k]);
             continue;
         }
 
