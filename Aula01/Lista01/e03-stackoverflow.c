@@ -13,25 +13,25 @@ A frase "overflow" se o resultado causar um overflow, ou "no overflow" caso cont
 
 #include <stdio.h>
 
+void verificarOverflow(int result, int maiorNumero){
+    if(result > maiorNumero){
+            printf("overflow.\n");
+        }else{
+            printf("no overflow.\n");
+        }
+}
+
 void overflowCalc (int numero1, int numero2, char operator, int maiorNumero){
     int result;
     switch(operator){
         case '+':
         result = numero1 + numero2;
-        if(result > maiorNumero){
-            printf("overflow.\n");
-        }else{
-            printf("no overflow.\n");
-        }
+        verificarOverflow(result, maiorNumero);
         break;
 
         case 'x':
         result = numero1 * numero2;
-        if(result > maiorNumero){
-            printf("overflow.\n");
-        }else{
-            printf("no overflow.\n");
-        }
+        verificarOverflow(result, maiorNumero);
         break;
 
         default:
