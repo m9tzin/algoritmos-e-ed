@@ -34,7 +34,7 @@ int overflowCalc (int numero1, int numero2, char operator, int maiorNumero){
         printf("no overflow.\n");
     }
     
-    return result;
+    return result; /* optional */
 }
 
 int main(){
