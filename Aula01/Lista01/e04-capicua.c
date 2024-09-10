@@ -22,7 +22,6 @@ void palindromoCheck(int number){
         inverse = inverse * 10 + lastDigit; /* Construindo o inverso */
         number /= 10; /* Remover o ultimo digito da esquerda */
     }
-
     if(inverse == original){
         printf(" yes");
     }else{
@@ -43,7 +42,6 @@ void verify(int limit){
 
 int main(){
     int limit;
-
     printf("Quantos numeros serao analisados? \n");
     scanf("%d", &limit);
     verify(limit);
