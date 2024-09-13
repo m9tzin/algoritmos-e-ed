@@ -13,5 +13,8 @@ int main(void){
     int i,j;
     float sensor[i][j]; /* Matriz de dados do sensor */
 
+    /* i = índice do tipo de sensor
+        j = tamanho dos dados inseridos */
+
     return 0;
 }
