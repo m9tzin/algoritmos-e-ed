@@ -1,6 +1,8 @@
 /* Estrutura de Dados I
 Matheus Marinho */
 
+/* Faça um programa que leia dez números e os imprima em ordem inversa. */
+
 #include <stdio.h>
 
 int main(){
