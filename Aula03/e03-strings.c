@@ -20,6 +20,9 @@ int main(void){
         printf("Erro de input.\n");
     }
 
+    /* Responda: Descubra o que fazem as seguintes funções:
+    strlen, strcpy, strcat, strcmp, strncmp, stricmp */
+
     printf("%d caracteres\n", (strlen(nomeCompleto)-1)); /* strlen retorna o tamanho da string */
     printf("%s\n", strcpy(nome, nomeCompleto)); /* strcopy copia o conteudo de uma string para outro vetor de string */
     strcat(nome, " hello"); /* strcat acrescenta parte de uma string no fim da outra */
