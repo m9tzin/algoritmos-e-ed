@@ -2,19 +2,20 @@
 Matheus Marinho */
 
 #include <stdio.h>
+#define limit 10
 
 int main(){
-    int numeros[10], aux; 
+    int numeros[limit], aux; 
     int maior = 0, menor = 0;
     /* Criando vetor de numeros */
     printf("Insira um numero: ");
-    for(int i=0; i<10; i++){
+    for(int i=0; i<limit; i++){
         scanf("%d", &numeros[i]);   
     }
 
-    /* Verificando qual seria o maior */
-    for(int i=0; i<9; i++){
-         for (int j=0; j<9-i; j++){
+    /* Ordenar para saber qual sera o maior */
+    for(int i=0; i<limit; i++){
+         for (int j=0; j<limit-i-1; j++){
             if(numeros[j] > numeros[j+1]){
             aux = numeros[j];
             numeros[j] = numeros[j+1];
