@@ -1,6 +1,11 @@
 /* Estrutura de Dados I
 Matheus Marinho */
 
+/* Faça um programa que execute as seguintes etapas:
+Digite 10 números inteiros e os armazene em um vetor
+Verifique qual desses números é o maior
+Imprima os elementos do vetor e em seguida o seu maior elemento */
+
 #include <stdio.h>
 #define limit 10
 
