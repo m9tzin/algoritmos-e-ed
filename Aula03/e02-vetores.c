@@ -25,9 +25,16 @@ int main(){
     }
     maior = numeros[9];
     menor = numeros[0];
-    
+    printf("\n");
+    /* Printing */
+    printf("Elementos do vetor: ");
+    for(int i=0; i<limit; i++){
+        printf("[%d] ", numeros[i]);
+    }
+    printf("\n");
     printf("Maior = %d\n", maior);
     printf("Menor = %d\n", menor);
+
 
     return 0;
 }
