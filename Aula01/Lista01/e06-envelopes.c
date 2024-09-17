@@ -7,6 +7,10 @@ Escreva um programa em C que, a partir da lista de rótulos de Kurt, calcule o n
 
 #include <stdio.h>
 
+void count(){
+    return 1;
+}
+
 void distribuir(){
     return 0;
 }
