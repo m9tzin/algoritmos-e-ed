@@ -28,13 +28,19 @@ void distribuir(){
 
 int main() {
     int rotulos, tipos;
-    int lista[tipos];
 
-    printf("Insira a quantidade de rotulos disponiveis: ");
+    printf("Insira a quantidade de rotulos disponiveis:\n");
     scanf("%d", &rotulos);
 
-    printf("Insira a quantidade de tipos de balas: ");
+    printf("Insira a quantidade de tipos de balas:\n");
     scanf("%d", &tipos);
+
+    int lista[tipos];
+    /* Criando a lista a ser distribuida */
+    printf("Quantidade de rotulos para cada tipo:\n");
+    for(int i=0; i<tipos; i++){
+        scanf("%d", &lista[i]);
+    }
     
     return 0;
 }
