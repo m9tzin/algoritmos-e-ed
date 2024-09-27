@@ -16,7 +16,7 @@ void somaVetor(int *p, int *q, int tamanho) {
 
 void mostraVetor(int *p, int tamanho) {
     for(int i=0; i<tamanho; i++){
-        printf(" [%03d] ", p[i]);
+        printf(" [%03d] ", *(p+i));
     }
 }
 
