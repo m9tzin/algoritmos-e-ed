@@ -10,13 +10,13 @@ Matheus Marinho */
 
 void somaVetor(int *p, int *q, int tamanho) {
     for(int i=0; i<tamanho; i++){
-        p[i] += q[i];
+        *(p+i) += *(q+i);
     }
 }
 
 void mostraVetor(int *p, int tamanho) {
     for(int i=0; i<tamanho; i++){
-        printf(" [%d] ", p[i]);
+        printf(" [%03d] ", p[i]);
     }
 }
 
@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
     int N; // tamanho do vetor \
               (inferir a partir dos dados de entrada)
 
-    N = argc-1; // except the program name
+    N = argc - 1; // except the program name
     int v1[N]; // dado
     int v2[N]; // aleatorio
 
