@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
 
     // Vetor aleatorio
     for(int i=0; i<N; i++){
-        v2[i] = rand() % ((VMAX-VMIN+1)+VMIN);
+        v2[i] = rand() % (VMAX-VMIN+1) + VMIN;
     }
 
     printf("Vetor 1: ");
