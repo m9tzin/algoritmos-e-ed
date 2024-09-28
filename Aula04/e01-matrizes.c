@@ -1,3 +1,6 @@
+/* Estrutura de Dados I
+Matheus Marinho
+ */
 /******************************************************************************
 
 Faça um programa que execute as seguintes etapas:

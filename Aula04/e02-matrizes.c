@@ -18,11 +18,11 @@ Dica:
 #include <stdlib.h>
 
 int main(int argv, char* argc[]){
- float temp, ppt, wind;
-    int M_LIN = argv - 1;
-    printf("%d", argv);
+    float temp, ppt, wind;
+    int matriz[100][100];
+    int M_LIN = atoi(argc[1]);
+    int M_COL = atoi(argc[2]);
 
- int matriz[M_LIN][M_COL];
  srand(time(NULL));
 
     for(int j=0; j < M_COL; j++){
