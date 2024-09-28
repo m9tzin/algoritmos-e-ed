@@ -1,3 +1,6 @@
+/* Estrutura de Dados I
+Matheus Marinho */
+
 /******************************************************************************
 
 Dada uma quantidade de amostras N, passada como parâmetro,  armazene em uma mesma variável e em simultâneo dados simulados do clima de Goiânia:
@@ -19,7 +22,7 @@ int main(int argv, char* argc[]){
     int M_LIN = argv - 1;
     printf("%d", argv);
 
- /* int matriz[M_LIN][M_COL];
+ int matriz[M_LIN][M_COL];
  srand(time(NULL));
 
     for(int j=0; j < M_COL; j++){
@@ -58,7 +61,7 @@ int main(int argv, char* argc[]){
             printf("%f ", matriz[i][j]);
         }
         printf("\n");
-    } */
+    }
 
     
 

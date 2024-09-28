@@ -9,15 +9,18 @@ Imprima os elementos da matriz e, em seguida, o seu maior elemento
 
 *******************************************************************************/
 #include <stdio.h>
-#define M_LIN 2
-#define M_COL 2
+#include <stdlib.h>
 
 int main(int argc, char* argv[]){
- int numero;
- int i=M_LIN, j=M_COL; /* facilitar a interp */
-    
+ int numero, matriz[100][100];
+ int M_LIN = atoi(argv[1]);
+ int M_COL = atoi(argv[2]);
+ int i, j;
+
+ i = M_LIN;
+ j = M_COL;
+
     /* Initializing the matrix */
-    int matriz[M_LIN][M_COL];
     for(int i=0; i<M_LIN; i++){
         for(int j=0; j<M_COL; j++){
             printf("Insira um valor para A[%d][%d]: ",i,j);
@@ -29,12 +32,16 @@ int main(int argc, char* argv[]){
     
     /* Printing the matrix */
      for(int i=0; i<M_LIN; i++){
+        printf("| ");
         for(int j=0; j<M_COL; j++){
             // printf("A[%d][%d] = %d ", i,j,matriz[i][j]);
-            printf("%d ", matriz[i][j]);
+            printf(" %d", matriz[i][j]);
         }
+        printf(" |");
+        printf("\n");
     }
 
+    printf("\n");
     /* Searching the biggest */
     int maior = matriz[0][0];
     for(int i=0; i<M_LIN; i++){
