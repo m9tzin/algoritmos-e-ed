@@ -17,48 +17,39 @@ Dica:
 #include <time.h>
 #include <stdlib.h>
 
-int main(int argv, char* argc[]){
-    float temp, ppt, wind;
-    int matriz[100][100];
-    int M_LIN = atoi(argc[1]);
-    int M_COL = atoi(argc[2]);
+int main(int argc, char* argv[]){
+    float matriz[100][100];
+    int M_LIN = 3;
+    int M_COL = atoi(argv[1]);
+    int limit = M_COL;
+    srand(time(NULL));
 
- srand(time(NULL));
-
-    for(int j=0; j < M_COL; j++){
+    /* Temp values */
+    for(int j=0; j < limit; j++){
         int max = 33;
         int min = 12;
-        temp = (float) rand() / (float) RAND_MAX;
-        temp *= (max-min);
-        temp += min;
-        matriz[0][j] = temp;
+        matriz[0][j] = (float)rand() / RAND_MAX * (max - min) + min;
     }
 
     /* Ppt values */
-    for(int j=0; j < M_COL; j++){
+    for(int j=0; j < limit; j++){
         int max = 3;
         int min = 0;
-        ppt = (float) rand() / (float) RAND_MAX;
-        ppt *= (float) (max-min);
-        ppt += (float) min;
-        matriz[1][j] = ppt;
+        matriz[1][j] = (float)rand() / RAND_MAX * (max - min) + min;
     }
 
     /* Wind values */
-    for(int j=0; j < M_COL; j++){
+    for(int j=0; j < limit; j++){
         int max = 33;
         int min = 13;
-        wind = (float) rand() / (float) RAND_MAX;
-        wind *= (float) (max-min);
-        wind += (float) min;
-        matriz[2][j] = wind;
+        matriz[2][j] = (float)rand() / RAND_MAX * (max - min) + min;
     }
 
     
     /* Printing the matrix */
      for(int i=0; i<M_LIN; i++){
-        for(int j=0; j<M_COL; j++){
-            printf("%f ", matriz[i][j]);
+        for(int j=0; j<limit; j++){
+            printf("%.3f ", matriz[i][j]);
         }
         printf("\n");
     }
