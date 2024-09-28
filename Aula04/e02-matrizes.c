@@ -47,13 +47,11 @@ int main(int argc, char* argv[]){
 
     
     /* Printing the matrix */
-     for(int i=0; i<M_LIN; i++){
-        for(int j=0; j<limit; j++){
-            printf("%.3f ", matriz[i][j]);
-        }
-        printf("\n");
+    printf("Temperatura(C) | Ppt(mm) | Vento(km/h)\n");
+    printf("-------------------------------------\n");
+    for (int j = 0; j < M_COL; j++) {
+        printf("%10.3f | %5.3f | %13.3f\n", matriz[0][j], matriz[1][j], matriz[2][j]);
     }
 
-    
-
+    return 0;
 }
