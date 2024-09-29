@@ -10,8 +10,9 @@ Compare seus endereços e exiba o maior endereço.
 
 int main(void){
     int value1, value2;
-    int *p_value1, *p_value2;
+    int *p_value1, *p_value2; /* pointers */
 
+    /* Inserindo conteudo */
     printf("Insira um valor para value 1:\n");
     scanf("%d", &value1);
 
@@ -23,9 +24,9 @@ int main(void){
     p_value2 =  &value2;
     
     if(p_value1 > p_value2){
-        printf("O maior endereco e o de value1: [%p]", p_value1);
+        printf("O maior endereco e o de value 1: [%p]", (void*)p_value1);
     }else{
-        printf("O maior endereco e o de value1: [%p]", p_value2);
+        printf("O maior endereco e o de value 2: [%p]", (void*)p_value2);
     }
     
     printf("\n");
