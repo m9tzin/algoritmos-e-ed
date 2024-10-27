@@ -16,7 +16,7 @@ int main (int argc, char* argv[]){
     
     length = atoi(argv[1]); /* Quantidade de Elementos */
 
-    if(argc == 2 ){
+    if(argc == 2){
         
         p = (int*)malloc(length * sizeof(int));
         
