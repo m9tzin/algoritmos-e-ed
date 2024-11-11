@@ -21,6 +21,8 @@ typedef struct List{
 	struct Node *fim;
 }List;
 
+/* Ponteiros auxiliares */
+
 Node *aux;
 Node *anterior;
 
@@ -81,19 +83,39 @@ void removerElemento(List *l){
 	int numero;
 	int achou;
 	if(l->inicio == NULL){
-		printf("\nFila esta vazia.");
+		printf("\nLista esta vazia.");
 	}else{
-		printf("Insira o numero a ser inserido: ");
+		printf("Insira o numero a ser removido: ");
 		scanf("%d", &numero);
 	
 		aux = l->inicio;
-		anterior = NULL;
+		anterior = NULL; // pointer para nao perder a lista
 		achou = 0;
+
+		while(aux != 0 && aux->num != numero){
+			anterior = aux;
+			aux = aux->prox;
+		}
 		
+		// se o elemento for o primeiro
+		if(aux != NULL){
+			if(anterior == NULL){
+				l->inicio = aux->prox;
+			}else{
+				anterior->prox = aux->prox;
+			}
+			
+			if(aux->prox == NULL){
+				l->fim = anterior;
+			}
+
+			free(aux);
+
+		}else{
+			printf("Elemento nao encontrado.");
+		}
 	}
 }
-
-
 
 
 int main(void){
@@ -105,6 +127,10 @@ int main(void){
 	
 	inserirFinal(l);
 	exibirLista(l);
+	removerElemento(l);
+	printf("\n\n");
+	exibirLista(l);
+	printf("\n");
 
 	return 0;
 }
