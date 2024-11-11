@@ -10,19 +10,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 	
-struct Elemento{
+typedef struct Elemento{
 	int num;
 	struct Elemento *prox;
-};
+}Elemento;
 
-typedef struct Elemento Elemento;
-
-struct Fila{
+typedef struct Fila{
 	struct Elemento *inicio;
 	struct Elemento *fim;
-};
-
-typedef struct Fila Fila;
+}Fila;
 
 Elemento *aux;
 

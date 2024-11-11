@@ -11,19 +11,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node{
+typedef struct Node{
 	int num;
 	struct Node *prox;
-};
+}Node;
 
-typedef struct Node Node;
-
-struct List{
+typedef struct List{
 	struct Node *inicio;
 	struct Node *fim;
-};
-
-typedef struct List List;
+}List;
 
 Node *aux;
 Node *anterior;
@@ -39,7 +35,7 @@ List* criarLista(){
 
 void inserirInicio(List *lista){
 	Node *novo = (Node*)malloc(sizeof(Node));
-	printf("Insira o elemento que deseja inserir: ");
+	printf("Insira o elemento que deseja inserir no inicio: ");
 	scanf("%d", &novo->num);
 	
 	if(lista->inicio == NULL){
@@ -65,6 +61,40 @@ void exibirLista(List *l){
 	}
 }
 
+void inserirFinal(List *l){
+	Node* novo = (Node*)malloc(sizeof(Node));
+	printf("Insira o valor a ser inserido no fim: ");
+	scanf("%d", &novo->num);
+
+	if(l->inicio == NULL){
+		l->inicio = novo;
+		l->fim = novo;
+		l->inicio->prox == NULL;
+	}else{
+		l->fim->prox = novo;
+		l->fim = novo;
+		l->fim->prox = NULL;
+	}
+}	
+
+void removerElemento(List *l){
+	int numero;
+	int achou;
+	if(l->inicio == NULL){
+		printf("\nFila esta vazia.");
+	}else{
+		printf("Insira o numero a ser inserido: ");
+		scanf("%d", &numero);
+	
+		aux = l->inicio;
+		anterior = NULL;
+		achou = 0;
+		
+	}
+}
+
+
+
 
 int main(void){
 	List *l = criarLista();
@@ -72,8 +102,10 @@ int main(void){
 	for(int k=0; k<5; k++){
 	inserirInicio(l);
 	};
-
+	
+	inserirFinal(l);
 	exibirLista(l);
 
 	return 0;
 }
+
