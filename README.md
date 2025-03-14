@@ -23,7 +23,7 @@ Este repositório contém implementações de diversos algoritmos e estruturas d
 ## Como Usar
 1. Clone o repositório:
      ```sh
-     git clone https://github.com/seu-usuario/algoritmos-e-ed.git
+     git clone https://github.com/m9tzin/algoritmos-e-ed.git
      ```
 2. Navegue até o diretório do projeto:
      ```sh
