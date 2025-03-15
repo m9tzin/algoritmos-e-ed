@@ -24,6 +24,7 @@ void SelectionSort(int arr[], int tamanho){
 
 int main(){
     // Declarando um array arbitrário
+    // Input arr = [50, 16, 23, 5, 7, 12, 10]
     int arr[] = {50, 16, 23, 5, 7, 12, 10};
     int size = sizeof(arr)/sizeof(arr[0]);
     

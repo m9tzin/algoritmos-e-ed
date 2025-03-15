@@ -18,7 +18,7 @@ void insertionSort(int arr[], int tam){
     }
 }
 
-int main(int argc, char *argv[]){
+int main(){
     int arr[] = {50, 16, 23, 5, 7, 12, 10};
     int size = sizeof(arr)/sizeof(arr[0]);
     
