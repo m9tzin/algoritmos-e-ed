@@ -43,6 +43,8 @@ int main(){
     printf("\n");
 
     printf("Menor valor do array: [%d]", arr[0]);
+    printf("\n");
+    printf("Maior valor do array: [%d]", arr[size-1]);
     
     return 0;
 }
