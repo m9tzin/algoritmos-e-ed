@@ -3,9 +3,7 @@
 # Insertion Sort
 
 def insertionSort(arr):
-    n = len(arr)
-
-    for i in range(1, n):
+    for i in range(1, len(arr)):
         key = arr[i]
         j = i - 1
         aux = i
@@ -25,3 +23,5 @@ arr = [50, 16, 23, 5, 7, 12, 10]
 
 print("Array original: ", arr)
 print("Array ordenado: ", insertionSort(arr))
+print("Menor valor: ", arr[0])
+print("Maior valor: ", arr[len(arr)-1])
