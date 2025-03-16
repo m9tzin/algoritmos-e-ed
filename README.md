@@ -35,7 +35,7 @@ Este repositório contém implementações de diversos algoritmos e estruturas d
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
 ## Licença
-Este projeto está licenciado sob a MIT License. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está licenciado sob a MIT License. Veja o arquivo `/LICENSE` para mais detalhes.
 
 ## Contato
 Para dúvidas ou sugestões, entre em contato pelo email matheusmrno@gmail.com.
