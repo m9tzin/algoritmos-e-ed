@@ -8,7 +8,7 @@ Este repositório contém implementações de diversos algoritmos e estruturas d
 - Ordenação
     - Selection Sort
     - Insertion Sort
-    -
+    - Bubble Sort
     -
 ## Estruturas de Dados Implementadas
 - Listas
