@@ -16,7 +16,9 @@ def shellSort(arr):
             while j >= 0 and chave < arr[j]:
                 arr[j + h] = arr[j]
                 j = j - h
-            arr[ j + h] = chave
+            arr[j + h] = chave
+        print(f"Vetor apos h={h}: {arr}") #fstring
+    
     return arr
 
 # Input:    

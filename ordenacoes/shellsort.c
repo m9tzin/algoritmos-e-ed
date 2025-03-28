@@ -24,6 +24,13 @@ void shellSort(int arr[], int tam){
             }
             arr[j + h] = chave;
         }
+        /* Mostrando o vetor para cada sequência h-ordenada */
+        printf("Vetor apos h=%d: ", h);
+        for (int k = 0; k < tam; k++) {
+            printf("%d ", arr[k]);
+        }
+        printf("\n");
+        printf("\n");
     }
 }
 
@@ -38,6 +45,7 @@ int main(){
         printf("%d ", arr[i]);
     }
     printf("\n");
+    printf("\n");
     
     // Chamando a função para ordenar o array
     shellSort(arr, size); 
@@ -47,7 +55,7 @@ int main(){
         printf("%d ", arr[i]);
     }
     printf("\n");
-
+    printf("\n");
     printf("Menor valor do array: [%d]", arr[0]);
     printf("\n");
     printf("Maior valor do array: [%d]", arr[size-1]);
