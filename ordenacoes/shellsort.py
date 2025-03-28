@@ -29,7 +29,9 @@ arr = [50, 16, 23, 5, 7, 12, 10]
 # Array ordenado:  [5, 7, 10, 12, 16, 23, 50
 
 print("Array original: ", arr)
+print("")
 arr = shellSort(arr)
 print("Array ordenado: ", arr)
+print("")
 print("Menor valor: ", arr[0])
 print("Maior valor: ", arr[len(arr)-1])
