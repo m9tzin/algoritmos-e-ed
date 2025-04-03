@@ -9,7 +9,8 @@ Este repositório contém implementações de diversos algoritmos e estruturas d
     - Selection Sort
     - Insertion Sort
     - Bubble Sort
-    -
+    - Shell Sort
+    - Quick Sort
 ## Estruturas de Dados Implementadas
 - Listas
     - Lista Simplesmente Encadeada
