@@ -9,8 +9,8 @@
 void bubbleSortbool(int arr[], int size){
     int aux;
     bool swap;
-
-    for(int i = 0; i <= size-1; i++){
+    swap = true;
+    for(int i = 0; i <= size-1 && swap; i++){
         swap = false;
         for(int j = 0; j<= size-i-1; j++){
             if(arr[j] > arr[j+1]){
