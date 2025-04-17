@@ -14,10 +14,10 @@ void bubbleSortbool(int arr[], int size){
         swap = false;
         for(int j = 0; j<= size-i-1; j++){
             if(arr[j] > arr[j+1]){
-                swap = true;
                 aux = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = aux;
+                swap = true;
             }
         }
     }
