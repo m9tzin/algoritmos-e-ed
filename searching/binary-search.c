@@ -1,6 +1,6 @@
 // Estrutura de Dados II
 // Matheus Marinho
-// Bubble Sort
+// Binary Search with Bubble ordenation
 
 #include <stdio.h>
 #include <stdlib.h>
