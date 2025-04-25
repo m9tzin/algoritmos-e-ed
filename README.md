@@ -3,7 +3,6 @@
 ## Descrição
 Este repositório contém implementações de diversos algoritmos e estruturas de dados em Python. O objetivo é fornecer exemplos práticos e bem documentados para ajudar no aprendizado e compreensão desses conceitos fundamentais.
 
-
 ## Algoritmos Implementados
 - Ordenação
     - Selection Sort
@@ -11,6 +10,11 @@ Este repositório contém implementações de diversos algoritmos e estruturas d
     - Bubble Sort
     - Shell Sort
     - Quick Sort
+    
+- Pesquisa
+    - Pesquisa Sequencial (Linear Search)
+    - Pesquisa Binária (Binary Search)
+
 ## Estruturas de Dados Implementadas
 - Listas
     - Lista Simplesmente Encadeada
