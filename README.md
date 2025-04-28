@@ -14,6 +14,7 @@ Este repositório contém implementações de diversos algoritmos e estruturas d
 - Pesquisa
     - Pesquisa Sequencial (Linear Search)
     - Pesquisa Binária (Binary Search)
+    - Tabela Hash (Hash Table)
 
 ## Estruturas de Dados Implementadas
 - Listas
