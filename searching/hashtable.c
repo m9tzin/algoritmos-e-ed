@@ -11,10 +11,11 @@ typedef struct{
     struct Item* next; // pointer to next item
 }Item;
 
-Item* hashtable[table_size];
+Item* hashTable[table_size];
 
-int hashfunc(){
-    
+/* Função qeu retorna uma nova chave available. */
+int hashFun(int key){
+    return key % table_size;
 }
 
 Item* createItem(int key, int value){
@@ -35,8 +36,16 @@ void print(Item* p){
     }
 }
 
-void insert(){
+void insert(int key, int value){
+    int index = hashFun(key);
+    Item* newItem = createItem(key, value);
 
+    if(hashTable[index] == NULL){
+        hashTable[index] = newItem;
+    }else{
+        newItem->next = hashTable[index];
+        hashTable[index] = newItem;
+    }
 }
 
 int search(){
