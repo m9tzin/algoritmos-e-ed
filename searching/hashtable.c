@@ -1,5 +1,6 @@
 /* Hash Table
     Matheus Marinho */
+    
     #include <stdio.h>
     #include <stdlib.h>
     #include <time.h>
@@ -11,15 +12,15 @@
         struct Item* next; 
     } Item;
     
-    Item* hashTable[table_size] = {NULL}; // Inicializa a tabela hash com NULL
+    Item* hashTable[table_size] = {NULL}; 
     
     int hashFun(int key) {
         return key % table_size;
     }
     
     Item* createItem(int key, int value) {
-        Item* novoItem = (Item*)malloc(sizeof(Item));  // Fixed: Added type cast
-        if (novoItem == NULL) {  // Fixed: Added NULL check
+        Item* novoItem = (Item*)malloc(sizeof(Item));
+        if (novoItem == NULL) {  
             fprintf(stderr, "Erro: Falha na alocação de memória\n");
             exit(1);
         }
@@ -65,7 +66,7 @@
         return NULL;
     }
     
-    void freeHashTable() {  // Added: Function to free allocated memory
+    void freeHashTable() {  
         for (int i = 0; i < table_size; i++) {
             Item* current = hashTable[i];
             while (current != NULL) {
@@ -100,6 +101,6 @@
             printf("\nItem com key = %d não encontrado.\n", keyToSearch);
         }
     
-        freeHashTable();  // Added: Free memory before exiting
+        freeHashTable();  
         return 0;
     }
