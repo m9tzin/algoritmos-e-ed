@@ -1,5 +1,8 @@
-/* Hash Table
-    Matheus Marinho */
+/* 
+    Hash Table
+    Matheus Marinho 
+
+    */
     
     #include <stdio.h>
     #include <stdlib.h>
@@ -66,6 +69,7 @@
         return NULL;
     }
     
+    /* Garbage collector */
     void freeHashTable() {  
         for (int i = 0; i < table_size; i++) {
             Item* current = hashTable[i];
