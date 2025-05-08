@@ -1,5 +1,5 @@
 /* 
-    Hash Table
+    Hash Table to Strings
     Matheus Marinho 
 
     */
