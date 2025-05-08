@@ -30,7 +30,7 @@ for i, table_size in enumerate(data['TableSize'].unique()):
              linewidth=2, markersize=8, color=colors[i],
              label=f'M={table_size}')
 
-plt.title('Número de Colisões vs. Número de Entradas', fontsize=16, fontweight='bold')
+plt.title('Número de Colisões x Número de Entradas', fontsize=16, fontweight='bold')
 plt.xlabel('Número de Entradas', fontsize=14)
 plt.ylabel('Número de Colisões', fontsize=14)
 plt.legend(fontsize=12)
@@ -52,7 +52,7 @@ for i, table_size in enumerate(data['TableSize'].unique()):
              linewidth=2, markersize=8, color=colors[i], alpha=0.6,
              label=f'Busca M={table_size}')
 
-plt.title('Tempo de Execução vs. Número de Entradas', fontsize=16, fontweight='bold')
+plt.title('Tempo de Execução x Número de Entradas', fontsize=16, fontweight='bold')
 plt.xlabel('Número de Entradas', fontsize=14)
 plt.ylabel('Tempo (segundos)', fontsize=14)
 plt.legend(fontsize=12)
@@ -70,7 +70,7 @@ for i, table_size in enumerate(data['TableSize'].unique()):
              linewidth=2, markersize=8, color=colors[i],
              label=f'M={table_size}')
 
-plt.title('Taxa de Colisão vs. Número de Entradas', fontsize=16, fontweight='bold')
+plt.title('Taxa de Colisão x Número de Entradas', fontsize=16, fontweight='bold')
 plt.xlabel('Número de Entradas', fontsize=14)
 plt.ylabel('Taxa de Colisão (colisões/entradas)', fontsize=14)
 plt.legend(fontsize=12)
