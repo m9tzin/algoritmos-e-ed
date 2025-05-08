@@ -36,7 +36,7 @@ unsigned int hashString(const char* str) {
     int c;
     
     while ((c = *str++)) {
-        hash = ((hash << 5) + hash) + c; // hash * 33 + c
+        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
     }
     
     return hash % tableSize;
@@ -73,7 +73,7 @@ void initHashTable(int size) {
             while (current != NULL) {
                 Item* temp = current;
                 current = current->next;
-                free(temp->key); // Libera a chave alocada com strdup
+                free(temp->key); 
                 free(temp);
             }
         }
@@ -278,7 +278,7 @@ int main(int argc, char* argv[]) {
     
     printf("\n--- Resultados dos Experimentos ---\n");
     printf("%-10s %-10s %-12s %-15s %-15s\n", 
-           "Tamanho", "Entradas", "Colisões", "Tempo Inserção", "Tempo Busca");
+           "Tamanho", "Entradas", "Colisoes", "Tempo Insercao", "Tempo Busca");
     
     for (int i = 0; i < totalExperiments; i++) {
         printf("%-10d %-10d %-12d %-15f %-15f\n", 
