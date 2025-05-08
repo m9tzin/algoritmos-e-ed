@@ -15,14 +15,14 @@ if 'NumInputs' in data.columns:
 if 'Collisions' in data.columns:
     data = data.rename(columns={'Collisions': 'colisoes'})
 
-# Configura o estilo dos gráficos
+# Styles
 plt.style.use('ggplot')
 plt.figure(figsize=(15, 12))
 
-# Define cores para melhor visualização
+# Colors
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
 
-# Gráfico de Número de Colisões
+# Colisoes
 plt.subplot(2, 1, 1)
 for i, table_size in enumerate(data['TableSize'].unique()):
     subset = data[data['TableSize'] == table_size]
@@ -38,7 +38,7 @@ plt.grid(True)
 plt.xscale('log')
 plt.xticks(data['inputs'].unique(), data['inputs'].unique())
 
-# Gráfico de Tempos de Execução
+# Tempos de execução
 plt.subplot(2, 1, 2)
 markers = ['o', 's', '^']
 linestyles = ['-', '--']
