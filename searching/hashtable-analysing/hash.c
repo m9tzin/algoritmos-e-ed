@@ -199,7 +199,7 @@ Experiment runExperiment(int tableSize, int numInputs) {
     
     char** testStrings = generateRandomStrings(numInputs, 5, 15);
     
-    /* medição do time */
+    /* medição do tempo */
     clock_t start = clock();
     for (int i = 0; i < numInputs; i++) {
         insert(testStrings[i], i);
