@@ -43,6 +43,17 @@ int fatorBalanceamento(Node* node){
     return alturaDir - alturaEsq;
 }
 
+void updateAltura(Node* node){
+    if (node != NULL){
+        int alturaEsq = pegarAltura(node->esquerda);
+        int alturaDir = pegarAltura(node->direita);
+        if(alturaEsq > alturaDir){
+            node->altura = 1 + alturaEsq;
+        }else if(alturaEsq < alturaDir){
+            node->altura = 1 + alturaDir;
+        }
+    }
+}
 
 
 int main(){
