@@ -59,9 +59,17 @@ void updateAltura(Node* node){
     }
 }
 
-Node* insertElement(Node* node, int value){
-    if (node == NULL){
+/* NULL @@@@@@@@ will be @@@@@@@ Node:   [value]
+                                        /       \                   
+                                       esq      dir
+                                        
+                                       
+*/
 
+Node* insert(Node* node, int value){
+    if (node == NULL){
+        node->value = value;
+        node->altura = 1;
     }
 }
 
