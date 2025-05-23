@@ -1,7 +1,14 @@
 /*
     Estrutura de Dados II
     AVL Tree 
-*/
+    for example:   
+                   [0]
+                 /    \
+                [1]     [0]
+                   \ 
+                    [0]
+
+                */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,13 +54,17 @@ void updateAltura(Node* node){
     if (node != NULL){
         int alturaEsq = pegarAltura(node->esquerda);
         int alturaDir = pegarAltura(node->direita);
-        if(alturaEsq > alturaDir){
-            node->altura = 1 + alturaEsq;
-        }else if(alturaEsq < alturaDir){
-            node->altura = 1 + alturaDir;
-        }
+        node->altura = 1 + (alturaEsq > alturaDir ? alturaEsq : alturaDir);
+        
     }
 }
+
+Node* insertElement(Node* node, int value){
+    if (node == NULL){
+
+    }
+}
+
 
 
 int main(){
