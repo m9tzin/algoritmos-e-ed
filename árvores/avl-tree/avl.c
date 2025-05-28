@@ -88,7 +88,35 @@ Node* insert(Node* node, int value){
     return node;
 }
 
+/* Rotações */
+
+/* Left */
+void rotateLeft(){
+
+}
+
+/* Right */
+void rotateRight(){
+
+}
+
+/* doubleLeft-Right */
+void rotateLeftRight(){
+
+}
+
+/* doubleRight-Left */
+void rotateRightLeft(){
+
+}
+
+/* Delete */
+
+void remove(){
+
+}
 
 int main(){
+    
     return 0;
 }
