@@ -62,6 +62,22 @@ void updateAltura(Node* node){
     }
 }
 
+/* @@@@@@@@@@@@@@@@@ - rotateRight - @@@@@@@@@@@@@@@@@
+                                 antes:
+                                        y (nó desbalanceado)
+                                       /  \
+                                      x    T3
+                                     / \
+                                    T1  T2  
+
+                                depois:
+                                x (nova raiz)
+                               / \
+                              T1   y
+                             / \
+                            T2  T3
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   */
+
 /* Right */
 Node* rotateRight(Node* y){
     Node* x = y->esquerda;
@@ -74,6 +90,22 @@ Node* rotateRight(Node* y){
     updateAltura(x);
     return x;
 }
+
+/* @@@@@@@@@@@@@@ - rotateLeft - @@@@@@@@@@@@@@@
+                                 antes:
+    x (nó desbalanceado)
+   /  \
+  T1   y
+      / \
+     T2  T3  
+
+                                depois:
+                                y (nova raiz)
+                               / \
+                              x   T3
+                             / \
+                            T1  T2
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   */
 
 /* Left */
 Node* rotateLeft(Node* x){
