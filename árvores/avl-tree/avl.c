@@ -25,30 +25,31 @@ Node* createNode(int value){
     Node* node = (Node*)malloc(sizeof(Node));
     if (node == NULL) {
         printf("Falha ao alocar a memória.");
+        return NULL;
     }
     
     // Parâmetros 
-        node->value = value;
-        node->altura = 1;
-        node->direita = NULL;
-        node->esquerda = NULL;
+    node->value = value;
+    node->altura = 1;
+    node->direita = NULL;
+    node->esquerda = NULL;
     
     return node;
 }
 
 int pegarAltura(Node* node){
-    if  (node == NULL)  {
+    if (node == NULL) {
         return 0;
     }
     return node->altura;
 }
 
 int fatorBalanceamento(Node* node){
-    if (node == NULL)   {
+    if (node == NULL) {
         return 0;
     }
-        int alturaEsq = pegarAltura(node->esquerda);
-        int alturaDir = pegarAltura(node->direita);
+    int alturaEsq = pegarAltura(node->esquerda);
+    int alturaDir = pegarAltura(node->direita);
     
     return alturaDir - alturaEsq;
 }
@@ -57,74 +58,28 @@ void updateAltura(Node* node){
     if (node != NULL){
         int alturaEsq = pegarAltura(node->esquerda);
         int alturaDir = pegarAltura(node->direita);
-        node->altura = 1 + (alturaEsq > alturaDir ? alturaEsq : alturaDir); // se alturaEsq > alturaDir :::: true -> alturaEsq :::: false -> alturaDir
-        
+        node->altura = 1 + (alturaEsq > alturaDir ? alturaEsq : alturaDir);
     }
 }
 
-/* NULL @@@@@@@@ will be @@@@@@@ Node: 
-                                         [value]
-                                        /       \                   
-                                       esq      dir
-                                        
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                           
-*/
-
-
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                                 antes:
-                                        y (nó desbalanceado)
-                                       /  \
-                                      x    T3
-                                     / \
-                                    T1  T2  
-
-                                depois:
-                                x (nova raiz)
-                               / \
-                              T1   y
-                             / \
-                            T2  T3
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   */
-/* Rotações */
 /* Right */
 Node* rotateRight(Node* y){
-    /* antes da rotação */
     Node* x = y->esquerda;
     Node* T2 = x->direita;
     
-    /* na rotação */
     x->direita = y;
     y->esquerda = T2;
+    
     updateAltura(y);
     updateAltura(x);
     return x;
 }
 
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                                 antes:
-    x (nó desbalanceado)
-   /  \
-  T1   y
-      / \
-     T2  T3  
-
-                                depois:
-                                y (nova raiz)
-                               / \
-                              x   T3
-                             / \
-                            T1  T2
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   */
-
-
 /* Left */
 Node* rotateLeft(Node* x){
-    /* antes da rotação */
     Node* y = x->direita;
     Node* T2 = y->esquerda;
     
-    /* na rotação */
     y->esquerda = x;
     x->direita = T2;
 
@@ -132,10 +87,10 @@ Node* rotateLeft(Node* x){
     updateAltura(y);
     return y;
 }
-/* Integramos as rotações duplas (caso houverem) na função inserir */
-/*BST - menores à esquerda, maiores à direita*/
 
+/* BST */
 Node* insert(Node* node, int value){
+     /* 1. Inserção BST normal */
     if (node == NULL){
         return createNode(value);
     }
@@ -144,52 +99,56 @@ Node* insert(Node* node, int value){
     } else if (value > node->value) {
         node->direita = insert(node->direita, value);
     } else {
-    // value == node->value
-        return node;
+        return node; // Não permite duplicatas
     }
+    
+    /* 2. Atualizar altura */
+    updateAltura(node);
 
-    /* Rotações duplas */
-    /* Olhando pelo referencial da direita:
-        i) rotateRight_Right (fb > 1)
-        ii) rotateRight_Left (fb > 1) 
-    */
+    /* 3. Obter fb */
+    int balance = fatorBalanceamento(node);
 
-    /* rotateRightRight */
-    if(fatorBalanceamento > 1 && value > node->direita->value){
+    /* 4. Verificar e aplicar rotações */
+    
+    /* Caso Direita-Direita (RR) */
+    if(balance > 1 && fatorBalanceamento(node->direita) >= 0){
         return rotateLeft(node);
     }
 
-    /* rotateRightLeft */
-    if(fatorBalanceamento > 1 && value < node->direita->value){
+    /* Caso Direita-Esquerda (RL) */
+    if(balance > 1 && fatorBalanceamento(node->direita) < 0){
         node->direita = rotateRight(node->direita);
         return rotateLeft(node);
     }
 
-    /* Olhando pelo referencial da esquerda:
-        i) rotateLeft_Right (fb < -1)
-        ii) rotateLeft_Left (fb < -1) 
-    */
-
-    /* rotateLeftRight */
-    if(fatorBalanceamento < -1 && value > node->esquerda->value){
+    /* Caso Esquerda-Direita (LR) */
+    if(balance < -1 && fatorBalanceamento(node->esquerda) > 0){
         node->esquerda = rotateLeft(node->esquerda);
         return rotateRight(node);
     }
 
-    /* rotateLeftLeft */
-    if(fatorBalanceamento < -1 && value > node->esquerda->value){
-        node->esquerda = rotateRight(node);
+    /* Caso Esquerda-Esquerda (LL) */
+    if(balance < -1 && fatorBalanceamento(node->esquerda) <= 0){
+        return rotateRight(node);
     }
 
     return node;
 }
 
 /* Impressões */
-void print(Node* root) {
+void preOrder(Node* root) {
     if (root != NULL) {
-        printf("%d(h:%d) ", root->value, root->altura);
+        printf("%d(h:%d,fb:%d) ", root->value, root->altura, fatorBalanceamento(root));
         preOrder(root->esquerda);
         preOrder(root->direita);
+    }
+}
+
+void inOrder(Node* root) {
+    if (root != NULL) {
+        inOrder(root->esquerda);
+        printf("%d ", root->value);
+        inOrder(root->direita);
     }
 }
 
@@ -204,25 +163,29 @@ void freeTree(Node* root) {
 int main(){
     Node* root = NULL;
     
-    printf("Inserindo valores: 10, 20, 30, 40, 50, 25\n");
-    root = insert(root, 10);
-    root = insert(root, 20);
-    root = insert(root, 30);
-    root = insert(root, 40);
-    root = insert(root, 50);
-    root = insert(root, 25);
+    int valores[] = {10, 20, 30, 40, 50, 25};
+    int n = sizeof(valores) / sizeof(valores[0]);
     
-    printf("Árvore em ordem: ");
-    inOrder(root);
-    printf("\n");
-    
-    printf("Árvore em pré-ordem (com alturas): ");
+    for(int i = 0; i < n; i++){
+        root = insert(root, valores[i]);
+        printf("Após inserir %d:\n", valores[i]);
+        printf("Ordem: ");
+        preOrder(root);
+        printf("\n");
+        printf("Em ordem: ");
+        inOrder(root);
+        printf("\n\n");
+    }
+
+    printf("Arvore (valor, altura, fator balanceamento): ");
     preOrder(root);
     printf("\n");
     
-    // Liberar memória
+    printf("Arvore em ordem: ");
+    inOrder(root);
+    printf("\n");
+    
     freeTree(root);
     
-    return 0;
     return 0;
 }
