@@ -1,5 +1,5 @@
 /*
-    Estrutura de Dados II - Matheus Sousa Marinho
+    Estrutura de Dados II - Matheus Sousa Marinho  
     AVL Tree 
     for example:   
                    [0]
@@ -136,11 +136,11 @@ Node* insert(Node* node, int value){
 }
 
 /* Impressões */
-void preOrder(Node* root) {
+void printTree(Node* root) {
     if (root != NULL) {
         printf("%d(h:%d,fb:%d) ", root->value, root->altura, fatorBalanceamento(root));
-        preOrder(root->esquerda);
-        preOrder(root->direita);
+        printTree(root->esquerda);
+        printTree(root->direita);
     }
 }
 
@@ -163,14 +163,15 @@ void freeTree(Node* root) {
 int main(){
     Node* root = NULL;
     
-    int valores[] = {10, 20, 30, 40, 50, 25};
+    int valores[] = {1, 6, 23, 10, 2, 11};
     int n = sizeof(valores) / sizeof(valores[0]);
     
+    /* Inserçoes */
     for(int i = 0; i < n; i++){
         root = insert(root, valores[i]);
-        printf("Após inserir %d:\n", valores[i]);
+        printf("Apos inserir %d:\n", valores[i]);
         printf("Ordem: ");
-        preOrder(root);
+        printTree(root);
         printf("\n");
         printf("Em ordem: ");
         inOrder(root);
@@ -178,7 +179,7 @@ int main(){
     }
 
     printf("Arvore (valor, altura, fator balanceamento): ");
-    preOrder(root);
+    printTree(root);
     printf("\n");
     
     printf("Arvore em ordem: ");
