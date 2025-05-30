@@ -78,8 +78,15 @@ void updateAltura(Node* node){
                             T2  T3
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   */
 
+/* Variavel global para controlar as mensagens de rotacao */
+int rotacoes_pendentes = 0;
+char mensagens_rotacao[10][100];
+
 /* Right */
 Node* rotateRight(Node* y){
+    sprintf(mensagens_rotacao[rotacoes_pendentes], "-> Rotacao a DIREITA realizada no no [%d]", y->value);
+    rotacoes_pendentes++;
+    
     Node* x = y->esquerda;
     Node* T2 = x->direita;
     
@@ -109,6 +116,9 @@ Node* rotateRight(Node* y){
 
 /* Left */
 Node* rotateLeft(Node* x){
+    sprintf(mensagens_rotacao[rotacoes_pendentes], "-> Rotacao a ESQUERDA realizada no no [%d]", x->value);
+    rotacoes_pendentes++;
+    
     Node* y = x->direita;
     Node* T2 = y->esquerda;
     
@@ -118,6 +128,14 @@ Node* rotateLeft(Node* x){
     updateAltura(x);
     updateAltura(y);
     return y;
+}
+
+/* Funcao para imprimir as rotacoes pendentes */
+void imprimirRotacoesPendentes(){
+    for(int i = 0; i < rotacoes_pendentes; i++){
+        printf("%s\n", mensagens_rotacao[i]);
+    }
+    rotacoes_pendentes = 0; // Reset para proxima insercao
 }
 /* Inserir */
 Node* insert(Node* node, int value){
@@ -381,27 +399,56 @@ void freeTree(Node* root) {
 }
 
 int main(){
-    Node* root = NULL;
+    Node* root1 = NULL;
+    Node* root2 = NULL;
     
-    int valores[] = {1, 6, 23, 10, 2, 11};
-    int n = sizeof(valores) / sizeof(valores[0]);
+    // Primeiro exemplo
+    int valores1[] = {1, 6, 23, 10, 2, 11};
+    int n1 = sizeof(valores1) / sizeof(valores1[0]);
     
-    /* Insercoes */
-    for(int i = 0; i < n; i++){
-        root = insert(root, valores[i]);
-        printf("Apos inserir %d:\n", valores[i]);
-        printTree(root);
+    printf("=== EXEMPLO 1: Inserindo valores {1, 6, 23, 10, 2, 11} ===\n\n");
+    
+    /* Insercoes - Exemplo 1 */
+    for(int i = 0; i < n1; i++){
+        root1 = insert(root1, valores1[i]);
+        printf("Apos inserir %d:\n", valores1[i]);
+        imprimirRotacoesPendentes();
+        printTree(root1);
         printf("\n");
     }
 
-    printf("Arvore Final:\n");
-    printTree(root);
+    printf("Arvore Final - Exemplo 1:\n");
+    printTree(root1);
     
-    printf("\nPercurso em ordem: ");
-    inOrder(root);
+    printf("\nPercurso em ordem - Exemplo 1: ");
+    inOrder(root1);
+    printf("\n\n");
+    
+    // Segundo exemplo
+    int valores2[] = {2, 8, 4, 10, 6, 5};
+    int n2 = sizeof(valores2) / sizeof(valores2[0]);
+    
+    printf("=== EXEMPLO 2: Inserindo valores {2, 8, 4, 10, 6, 5} ===\n\n");
+    
+    /* Insercoes - Exemplo 2 */
+    for(int i = 0; i < n2; i++){
+        root2 = insert(root2, valores2[i]);
+        printf("Apos inserir %d:\n", valores2[i]);
+        imprimirRotacoesPendentes();
+        printTree(root2);
+        printf("\n");
+    }
+
+    printf("Arvore Final - Exemplo 2:\n");
+    printTree(root2);
+    
+    printf("\nPercurso em ordem - Exemplo 2: ");
+    inOrder(root2);
     printf("\n");
     
-    freeTree(root);
+    // Liberar memoria
+    freeTree(root1);
+    freeTree(root2);
     
     return 0;
 }
