@@ -1,6 +1,6 @@
 /*
     Estrutura de Dados II - Arvore B
-    Matheus Sousa Marinho
+    Matheus Sousa Marinho (202206132) e Henryque Oliveira Affiune (202201634)
 
 */
 
