@@ -1,7 +1,7 @@
 /*
     Estrutura de Dados II - Arvore B
     Matheus Sousa Marinho
-    
+
 */
 
 #include <stdio.h>
@@ -381,20 +381,16 @@ BTreeNode* criarArvoreBase() {
     // Caso 1: Inserir 20, 40, 60, 80, 70
     int caso1[] = {20, 40, 60, 80, 70};
     int n1 = sizeof(caso1) / sizeof(caso1[0]);
-    printf("Caso 1: Inserindo 20, 40, 60, 80, 70\n");
     for (int i = 0; i < n1; i++) {
         root = insert(root, caso1[i]);
     }
-    printBTree(root, 0);
 
     // Caso 2: Inserir 10 e 30
     int caso2[] = {10, 30};
     int n2 = sizeof(caso2) / sizeof(caso2[0]);
-    printf("\nCaso 2: Inserindo 10 e 30\n");
     for (int i = 0; i < n2; i++) {
         root = insert(root, caso2[i]);
     }
-    printBTree(root, 0);
 
     printf("\n");
     return root;
@@ -404,7 +400,7 @@ int main() {
     BTreeNode* root = NULL;
 
     /* Dois casos de inserção */
-    printf("Casos de inserao: \n");
+    printf("--- Casos de insercao: --- \n");
 
     // Caso 1: Inserir 20, 40, 60, 80, 70
     int caso1[] = {20, 40, 60, 80, 70};
@@ -424,10 +420,8 @@ int main() {
     }
     printBTree(root, 0);
 
-    printf("\n");
-
     /* Casos de remocao */
-    printf("Casos de remocao:\n");
+    printf("\n--- Casos de remocao: ---");
 
     // 1. Remocao de folha
     root = criarArvoreBase();
