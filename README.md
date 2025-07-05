@@ -5,26 +5,30 @@ Este repositório contém implementações de diversos algoritmos e estruturas d
 
 ## Algoritmos Implementados
 - Ordenação
-    - Selection Sort
-    - Insertion Sort
-    - Bubble Sort
-    - Shell Sort
-    - Quick Sort
-    
+    - Selection Sort (C e Python)
+    - Insertion Sort (C e Python)
+    - Bubble Sort (C e Python)
+    - Shell Sort (C e Python)
+    - Quick Sort (C e Python)
+
 - Pesquisa
-    - Pesquisa Sequencial (Linear Search)
-    - Pesquisa Binária (Binary Search)
-    - Tabela Hash (Hash Table)
+    - Pesquisa Sequencial (Linear Search) (C e Python)
+    - Pesquisa Binária (Binary Search) (C e Python)
+    - Tabela Hash (Hash Table) (C e Python)
+
+- Árvores
+    - Árvore B (B-Tree) (C)
 
 ## Estruturas de Dados Implementadas
 - Listas
-    - Lista Simplesmente Encadeada
-    - Lista Duplamente Encadeada
-- Pilhas
-- Filas
+    - Lista Simplesmente Encadeada (C)
+    - Lista Duplamente Encadeada (C)
+- Pilhas (C)
+- Filas (C)
 - Árvores
-    - Árvore Binária de Busca
-    - Árvore AVL
+    - Árvore Binária de Busca (C)
+    - Árvore AVL (C)
+    - Árvore B (B-Tree) (C) — com inserção, remoção, busca e impressão
 
 ## Como Usar
 1. Clone o repositório:
