@@ -1,7 +1,6 @@
-/*
+/*k
     Estrutura de Dados II - Arvore B
     Matheus Marinho
-
 */
 
 #include <stdio.h>
